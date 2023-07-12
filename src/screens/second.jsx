@@ -13,8 +13,8 @@ const MyLocations = () => {
       <View>
         <MapView
           initialRegion={{
-            latitude: 4.14883,
-            longitude: 9.28885,
+            latitude: 4.146818,
+            longitude: 9.286417,
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
@@ -30,7 +30,7 @@ const MyLocations = () => {
            <View style={{marginLeft: 'auto', marginRight: 'auto', marginTop: vh(5)}}>
              <Image source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6XW05OhvH3N9IngBkol3IwQ9aoNq_odn2iidOHMtuthnn2lRNR5Iw_DlY2L_ciCJFpY4&usqp=CAU'}} style={{width: vw(90), height: vh(25), borderRadius: 15}} />
            </View>
-           <Text style={{marginLeft: vw(5), marginTop: vh(3), fontSize: 20, color: '#000080', fontWeight: 700}}>University of Buea</Text>
+           <Text style={{marginLeft: vw(5), marginTop: vh(3), fontSize: 20, color: '#000080', fontWeight: 700}}>Amphi 750, University of Buea</Text>
 
            <TouchableOpacity onPress={() => navigation.navigate('Direction')} style={{marginLeft: vw(5), backgroundColor: '#000080', width: vw(90), height: vh(5), marginTop: vh(5), borderRadius: 20, alignItems: 'center', justifyContent: 'center'}}>
             <View style={{justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row', width: vw(30)}}>

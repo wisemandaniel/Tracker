@@ -5,13 +5,6 @@ import { vw, vh } from 'react-native-expo-viewport-units';
 import MapView from 'react-native-maps';
 import { MaterialIcons } from '@expo/vector-icons';
 
-const data = [
-  { id: '1', text: 'View 1' },
-  { id: '2', text: 'View 2' },
-  { id: '3', text: 'View 3' },
-  { id: '4', text: 'View 4' },
-];
-
 const Direction = () => {
     const navigation = useNavigation()
 
@@ -35,25 +28,31 @@ const Direction = () => {
           elevation: 25
         }}>
            <View style={{marginLeft: 'auto', marginRight: 'auto', marginTop: vh(5)}}>
-            <View style={{backgroundColor: 'gray', padding: 15, borderRadius: 15, width: vw(90)}}>
-              <View style={{flexDirection: 'row', justifyContent: 'space-between', width: vw(30)}}>
-                <View style={{width: 20, height: 20, borderRadius: 100, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
-                 <Text>T</Text>
+            <View style={{backgroundColor: '#ccc', padding: 15, borderRadius: 15, width: vw(90)}}>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between', width: vw(20), alignItems: 'center'}}>
+                <View style={{width: 28, height: 28, borderRadius: 100, backgroundColor: '#000080', alignItems: 'center', justifyContent: 'center'}}>
+                  <MaterialIcons name='location-on' size={20} color={'#fff'} />
                 </View>
-                <Text>Your Place</Text>
+                <Text style={{color: '#000', fontWeight: 600}}>You</Text>
               </View>
               <View>
 
               </View>
-              <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(70)}}>
-              <View style={{width: vw(60), height: 1, backgroundColor: '#ccc', marginTop: 20, marginBottom: 20}}></View>
-              <Text>T</Text>
-              </View>
-              <View style={{flexDirection: 'row', justifyContent: 'space-between', width: vw(30)}}>
-                <View style={{width: 20, height: 20, borderRadius: 100, backgroundColor: 'red', alignItems: 'center', justifyContent: 'center'}}>
-                 <Text>T</Text>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(90)}}>
+              <View style={{width: vw(60), height: 1, backgroundColor: 'gray', marginTop: 20, marginBottom: 20}}></View>
+              
+              <View style={{flexDirection: 'row', justifyContent: 'space-between', width: vw(20), alignItems: 'center'}}>
+                <View style={{width: 28, height: 28, borderRadius: 100, backgroundColor: '#000080', alignItems: 'center', justifyContent: 'center'}}>
+                  <MaterialIcons name='location-on' size={20} color={'#fff'} />
                 </View>
-                <Text>Your Place</Text>
+              </View>
+
+              </View>
+              <View style={{flexDirection: 'row', justifyContent: 'space-between', width: vw(35), alignItems: 'center'}}>
+                <View style={{width: 28, height: 28, borderRadius: 100, backgroundColor: '#000080', alignItems: 'center', justifyContent: 'center'}}>
+                  <MaterialIcons name='location-on' size={20} color={'#fff'} />
+                </View>
+                <Text style={{color: '#000', fontWeight: 600}}>Amphi 750</Text>
               </View>
             </View>
            </View>
