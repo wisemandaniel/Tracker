@@ -1,12 +1,27 @@
-import React, {  } from 'react'
+import React, { useState } from 'react'
 import { View, Text, StyleSheet, SafeAreaView, Image, TouchableOpacity, FlatList } from 'react-native'
 import { useNavigation } from '@react-navigation/native';
 import { vw, vh } from 'react-native-expo-viewport-units';
 import MapView from 'react-native-maps';
 import { MaterialIcons } from '@expo/vector-icons';
+import { Marker, Polyline } from 'react-native-maps';
 
 const Direction = () => {
     const navigation = useNavigation()
+    const [activeLocation, setActiveLocation] = useState(null);
+    const [activeMarker, setActiveMarker] = useState(null);
+
+    const markers = [
+      { id: 1, title: 'Marker 1', coordinate: { latitude: 4.15477, longitude: 9.29023 } },
+      { id: 2, title: 'Marker 2', coordinate: { latitude: 4.13809, longitude: 9.3041 } },
+    ];
+  
+    const handleMarkerPress = (marker) => {
+      setActiveMarker(marker);
+    };
+
+    const origin = { latitude: 4.15477, longitude: 9.29023 };
+    const destination = { latitude: 4.13809, longitude: 9.3041 }
 
   return (
     <SafeAreaView style={ styles.container }>
@@ -18,7 +33,12 @@ const Direction = () => {
             latitudeDelta: 0.0922,
             longitudeDelta: 0.0421,
           }}
-        style={styles.map} />
+        style={styles.map} >
+          <Marker coordinate={origin} >
+          </Marker>
+          <Marker coordinate={destination} /> 
+          <Polyline coordinates={[origin, destination]} strokeColor="red" strokeWidth={2} />
+        </MapView>
         <View style={{
           height: vh(50),
           backgroundColor: '#fff',
@@ -31,7 +51,7 @@ const Direction = () => {
             <View style={{backgroundColor: '#ccc', padding: 15, borderRadius: 15, width: vw(90)}}>
               <View style={{flexDirection: 'row', justifyContent: 'space-between', width: vw(20), alignItems: 'center'}}>
                 <View style={{width: 28, height: 28, borderRadius: 100, backgroundColor: '#000080', alignItems: 'center', justifyContent: 'center'}}>
-                  <MaterialIcons name='location-on' size={20} color={'#fff'} />
+                  <MaterialIcons name='adjust' size={20} color={'#fff'} />
                 </View>
                 <Text style={{color: '#000', fontWeight: 600}}>You</Text>
               </View>
@@ -43,7 +63,7 @@ const Direction = () => {
               
               <View style={{flexDirection: 'row', justifyContent: 'space-between', width: vw(20), alignItems: 'center'}}>
                 <View style={{width: 28, height: 28, borderRadius: 100, backgroundColor: '#000080', alignItems: 'center', justifyContent: 'center'}}>
-                  <MaterialIcons name='location-on' size={20} color={'#fff'} />
+                  <MaterialIcons name='swap-vert' size={20} color={'#fff'} />
                 </View>
               </View>
 
@@ -59,16 +79,20 @@ const Direction = () => {
            
            <View style={{marginLeft: 'auto', marginRight: 'auto', marginTop: vh(3), flexDirection: 'row'}}>
             <View style={styles.item}>
-              <Text style={styles.title}>Hello</Text>
+              <MaterialIcons name='local-taxi' size={28} color={'#fff'}/>
+              <Text style={{color: '#fff', fontSize: 12, fontWeight: 500}}>30m</Text>
             </View>
             <View style={styles.item}>
-              <Text style={styles.title}>Hello</Text>
+              <MaterialIcons name='two-wheeler' size={28} color={'#fff'}/>
+              <Text style={{color: '#fff', fontSize: 12, fontWeight: 500}}>45m</Text>
             </View>
             <View style={styles.item}>
-              <Text style={styles.title}>Hello</Text>
+              <MaterialIcons name='pedal-bike' size={28} color={'#fff'}/>
+              <Text style={{color: '#fff', fontSize: 12, fontWeight: 500}}>55m</Text>
             </View>
             <View style={styles.item}>
-              <Text style={styles.title}>Hello</Text>
+              <MaterialIcons name='directions-walk' size={28} color={'#fff'}/>
+              <Text style={{color: '#fff', fontSize: 12, fontWeight: 500}}>2hr</Text>
             </View>
            </View>
 
@@ -92,6 +116,7 @@ const styles = StyleSheet.create(
       item: {
         borderWidth: 1,
         borderColor: '#000080',
+        backgroundColor: '#000080',
         padding: 5,
         height: vh(9),
         alignItems: 'center',
