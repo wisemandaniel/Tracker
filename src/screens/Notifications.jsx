@@ -80,7 +80,7 @@ const Notifications = () => {
                     size={28}
                     color="#fff"
                 />
-            <Text style={{marginLeft: vw(5), fontWeight: 600, fontSize: 16, color: '#fff'}}>Location History</Text>
+            <Text style={{marginLeft: vw(5), fontWeight: 600, fontSize: 16, color: '#fff'}}>Notifications</Text>
            </View>
            <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <View style = {{padding: vh(3)}}>

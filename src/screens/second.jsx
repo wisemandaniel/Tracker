@@ -33,9 +33,10 @@ const MyLocations = () => {
            <View style={{marginLeft: 'auto', marginRight: 'auto', marginTop: vh(5)}}>
              <Image source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6XW05OhvH3N9IngBkol3IwQ9aoNq_odn2iidOHMtuthnn2lRNR5Iw_DlY2L_ciCJFpY4&usqp=CAU'}} style={{width: vw(90), height: vh(25), borderRadius: 15}} />
            </View>
-           <Text style={{marginLeft: vw(5), marginTop: vh(3), fontSize: 20, color: '#000080', fontWeight: 700}}>UB Junction</Text>
+           <Text style={{marginLeft: vw(5), marginTop: vh(1), fontSize: 20, color: '#000080', fontWeight: 700}}>UB Junction</Text>
+           <Text style={{marginLeft: vw(5), marginTop: vh(1), fontSize: 20, color: '#000080', fontWeight: 700}}>Speed: 20kmp</Text>
 
-           <TouchableOpacity onPress={() => navigation.navigate('Direction')} style={{marginLeft: vw(5), backgroundColor: '#000080', width: vw(90), height: vh(5), marginTop: vh(5), borderRadius: 20, alignItems: 'center', justifyContent: 'center'}}>
+           <TouchableOpacity onPress={() => navigation.navigate('Direction')} style={{marginLeft: vw(5), backgroundColor: '#000080', width: vw(90), height: vh(5), marginTop: vh(3), borderRadius: 20, alignItems: 'center', justifyContent: 'center'}}>
             <View style={{justifyContent: 'space-between', alignItems: 'center', flexDirection: 'row', width: vw(30)}}>
               <MaterialIcons name="send" size={22} color="white" />
               <Text style={{color: '#fff'}}>Directions</Text>
