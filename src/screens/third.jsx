@@ -37,7 +37,7 @@ const Direction = () => {
           <Marker coordinate={origin} >
           </Marker>
           <Marker coordinate={destination} /> 
-          <Polyline coordinates={[origin, destination]} strokeColor="red" strokeWidth={2} />
+          <Polyline coordinates={[origin, destination]} strokeColor="blue" strokeWidth={2} />
         </MapView>
         <View style={{
           height: vh(50),

@@ -43,14 +43,14 @@ const First = () => {
             <Text style={{fontSize: 18, color: '#000', fontWeight: 500}}>Current Location</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('MyLocations')} style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(65), paddingLeft: vh(3), marginTop: vh(5)}}>
+          <TouchableOpacity onPress={() => navigation.navigate('RecentLocations')} style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(65), paddingLeft: vh(3), marginTop: vh(5)}}>
             <View style={{padding: vh(1), backgroundColor: '#75b0fe', borderRadius: 5}}>
               <MaterialIcons name="history" size={20} color="#000080" />
             </View>
             <Text style={{fontSize: 18, color: '#000', fontWeight: 500}}>Recent Locations</Text>
           </TouchableOpacity>
 
-          <TouchableOpacity onPress={() => navigation.navigate('MyLocations')} style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(53), paddingLeft: vh(3), marginTop: vh(5)}}>
+          <TouchableOpacity onPress={() => navigation.navigate('Notifications')} style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(53), paddingLeft: vh(3), marginTop: vh(5)}}>
             <View style={{padding: vh(1), backgroundColor: '#75b0fe', borderRadius: 5}}>
               <MaterialIcons name="notifications-none" size={20} color="#000080" />
             </View>
@@ -94,32 +94,3 @@ const styles = StyleSheet.create(
 )
 
 export default First
-
-
-{/* <View>
-<TouchableOpacity onPress={() => navigation.navigate('MyLocations')} style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(58), paddingLeft: vh(3), marginTop: vh(5)}}>
-  <MaterialIcons name="location-on" size={24} color="white" />
-  <Text style={{fontSize: 18, color: '#fff'}}>Current Location</Text>
-</TouchableOpacity>
-<TouchableOpacity onPress={() => navigation.navigate('RecentLocations')} style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(60), paddingLeft: vh(3), marginTop: vh(5)}}>
-  <MaterialIcons name="location-on" size={24} color="white" />
-  <Text style={{fontSize: 18, color: '#fff'}}>Recent Locations</Text>
-</TouchableOpacity>
-<TouchableOpacity style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(37), paddingLeft: vh(3), marginTop: vh(5)}}>
-  <MaterialIcons name="location-on" size={24} color="white" />
-  <Text style={{fontSize: 18, color: '#fff'}}>Settings</Text>
-</TouchableOpacity>
-<TouchableOpacity style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(28), paddingLeft: vh(3), marginTop: vh(5)}}>
-  <MaterialIcons name="location-on" size={24} color="white" />
-  <Text style={{fontSize: 18, color: '#fff'}}>Help</Text>
-</TouchableOpacity>
-<TouchableOpacity style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(36), paddingLeft: vh(3), marginTop: vh(5)}}>
-  <MaterialIcons name="location-on" size={24} color="white" />
-  <Text style={{fontSize: 18, color: '#fff'}}>Support</Text>
-</TouchableOpacity>
-
-<TouchableOpacity style={{flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', width: vw(36), paddingLeft: vh(3), marginTop: vh(35)}}>
-  <MaterialIcons name="location-on" size={24} color="white" />
-  <Text style={{fontSize: 18, color: '#fff'}}>Logout</Text>
-</TouchableOpacity>
-</View> */}
