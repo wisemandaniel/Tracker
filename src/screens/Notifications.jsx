@@ -11,13 +11,15 @@ const Card = ({ time, content, danger }) => {
       <>
          <View style={styles.cardContainer}>
             <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <View style={{backgroundColor: '#0d52bd', borderRadius: 10, marginRight: vw(3), padding: 3}}>
-                  {danger == 1 && <Icon name='warning' size={42} color={'#fff'} />}
-                  {danger == 0 && <MaterialIcons name='notifications-none' size={42} />}
-                </View>
+                {<View style={{backgroundColor: danger === 1 ? 'red' : '#0d52bd', borderRadius: 10, marginRight: vw(3), padding: 3}}>
+                  {danger == 1 && <Icon name='warning' size={28} color={'#fff'} />}
+                  {danger == 0 && <MaterialIcons name='notifications-none' size={28} color={'#fff'} />}
+                </View>}
+                <View>
                 <Text style={styles.title}>{content}</Text>
+                <Text style={styles.description}>{time} ago</Text>
+                </View>
             </View>
-            <Text style={styles.description}>{time} ago</Text>
         </View>
         <View style={{width: vw(100), height: vh(0.1), backgroundColor: 'gray'}}></View>
       </>
@@ -33,7 +35,7 @@ const Card = ({ time, content, danger }) => {
       marginBottom: 0,
     },
     title: {
-      fontSize: 16,
+      fontSize: 14,
       fontWeight: 'bold',
       marginBottom: 8,
     },
@@ -76,13 +78,13 @@ const Notifications = () => {
             <AntDesign
                     name="arrowleft"
                     size={28}
-                    color="#000"
+                    color="#fff"
                 />
-            <Text style={{marginLeft: vw(5), fontWeight: 600, fontSize: 16}}>Notification</Text>
+            <Text style={{marginLeft: vw(5), fontWeight: 600, fontSize: 16, color: '#fff'}}>Location History</Text>
            </View>
            <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <View style = {{padding: vh(3)}}>
-                <MaterialIcons name="notifications-none" size={28} color="#000" />
+                <MaterialIcons name="notifications-none" size={28} color="#fff" />
                 <View style={{position: 'absolute', top: vh(3), left: vw(10), backgroundColor: 'red', borderRadius: 100, width: vh(2.2), height: vh(2.2)}}>
                    <Text style={{color: '#fff', textAlign: 'center', fontSize: 10, fontWeight: 700}}>2</Text>
                 </View>
