@@ -8,24 +8,25 @@ import { MaterialIcons } from '@expo/vector-icons';
 
 const LoginScreen = () => {
   const navigation = useNavigation();
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [inputs, setInputs] = useState({email: '', password: ''});
+  const [email, setEmail] = useState('fombutnubia007@gmail.com');
+  const [password, setPassword] = useState('tracker123')
 //   const auth = useAuth();
 
+
+  const handleOnchange = (text, input) => {
+    setInputs(prevState => ({...prevState, [input]: text}));
+  };
+
   const login = async () => {
-    navigation.navigate('first')
-    // try {
-    //   const { token } = await auth.logInAsync('username-password', {
-    //     username,
-    //     password,
-    //   });
-    //   console.log('Login successful! Token:', token);
-    //   // navigate to the next screen
-    //   navigation.navigate('NextScreen');
-    // } catch (error) {
-    //   console.error('Login failed:', error);
-    //   // display an error message
-    // }
+    console.log(inputs);console.log(' ');
+    console.log(email, password);
+    if (inputs.email === email && inputs.password === password) {
+      navigation.navigate('first')
+      console.log(inputs);
+    } else {
+      alert('Email and password combination do not match')
+    }
   };
 
   return (
@@ -44,21 +45,21 @@ const LoginScreen = () => {
             <View style={{padding: vh(1)}}>
             <Input
                 placeholder="Email"
-                value={username}
-                onChangeText={setUsername}
+                onChangeText={text => handleOnchange(text, 'email')}
+                value={inputs.email}
             />
             <Input
                 placeholder="Password"
-                value={password}
-                onChangeText={setPassword}
+                onChangeText={text => handleOnchange(text, 'password')}
+                value={inputs.password}
                 secureTextEntry
             />
-            <TouchableOpacity style={{marginTop: -vh(3.5), marginBottom: vh(3), paddingLeft: vh(1)}}>
+            <TouchableOpacity onPress={login} style={{marginTop: -vh(3.5), marginBottom: vh(3), paddingLeft: vh(1)}}>
                 <Text>Forgot password?</Text>
             </TouchableOpacity>    
 
             </View>
-            <TouchableOpacity onPress={() => navigation.navigate('first')} style={{backgroundColor: '#000080', width: vw(75), padding: 18, alignItems: 'center', justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', borderRadius: 35, elevation: 25}}>
+            <TouchableOpacity onPress={login} style={{backgroundColor: '#000080', width: vw(75), padding: 18, alignItems: 'center', justifyContent: 'center', marginLeft: 'auto', marginRight: 'auto', borderRadius: 35, elevation: 25}}>
                 <Text style = {{color: '#fff'}}>Login</Text>
             </TouchableOpacity>
             <TouchableOpacity>
